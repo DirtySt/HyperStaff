@@ -54,11 +54,49 @@ header .shop-cart-button:hover {
   color: #dc3d3d;
 }
 header .shop-cart-button.active {
-  cursor: pointer;
-  float: right;
-  transition: color 500ms ease;
-  font-size: 20px;
   color: #dc3d3d;
+  transform: scale(1.5);
+  transition: transform 500ms ease;
+}
+
+header .shop-cart {
+  overflow: hidden;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 450px;
+  min-height: 100px;
+  background: #fafafa;
+  -webkit-box-shadow: 4px 5px 15px -7px #606060;
+  box-shadow: 4px 5px 15px -7px #606060;
+  z-index: 1000;
+}
+
+header .shop-cart .item {
+  width: 100%;
+  margin: 10px;
+  padding-left: 5px;
+}
+
+header .shop-cart .empty {
+  text-align: center;
+  align-items: center;
+}
+
+header .shop-cart .empty h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+header .shop-cart .item img{
+  width: 80px;
+  float: left;
+  margin-right: 20px;
+}
+
+header .shop-cart .item b {
+  color: #797979;
+  font-weight: 600;
 }
 
 header .presentation{
