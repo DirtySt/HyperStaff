@@ -1,10 +1,13 @@
 import './App.css';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import React from "react";
+import React, {useState} from "react";
 import Items from "./components/Items";
 
+
+
 class App extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -62,15 +65,21 @@ class App extends React.Component {
             ]
         }
         this.addToOrders = this.addToOrders.bind(this);
+        this.deleteOrder = this.deleteOrder.bind(this);
     }
+
     render(){
         return (
             <div className={"wrapper"}>
-                <Header orders={this.state.orders}/>
+                <Header orders={this.state.orders} onDelete={this.deleteOrder}/>
                 <Items items={this.state.items} onAdd={this.addToOrders}/>
                 <Footer/>
             </div>
         );
+    }
+
+    deleteOrder(id){
+        this.setState({orders: this.state.orders.filter(el => el.id !== id)})
     }
 
     addToOrders(item){
@@ -81,7 +90,7 @@ class App extends React.Component {
             }
         })
         if (!isInArray)
-            this.setState({orders:[...this.state.orders,item]},)
+            this.setState({orders:[...this.state.orders,item]},()=>console.log(this.state.orders))
         }
 }
 

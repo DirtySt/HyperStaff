@@ -74,8 +74,16 @@ header .shop-cart {
 
 header .shop-cart .item {
   width: 100%;
-  margin: 10px;
-  padding-left: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+header .shop-cart .item .delete-icon {
+  float: right;
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #dc3d3d;
 }
 
 header .shop-cart .empty {
