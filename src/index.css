@@ -18,6 +18,23 @@ body {
   margin: 50px auto;
 }
 
+.categories div {
+  display: inline-block;
+  background-color: #f2f2f2;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  margin-right: 15px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 500ms ease;
+}
+
+.categories div:hover {
+  border-color: silver;
+  transform: scale(1.1);
+}
+
 header .logo {
   font-weight: 600;
   font-size: 20px;
@@ -87,13 +104,22 @@ header .shop-cart .item .delete-icon {
 }
 
 header .shop-cart .empty {
-  text-align: center;
+  padding-top: 7%;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
 header .shop-cart .empty h2 {
   font-size: 20px;
   margin-bottom: 20px;
+}
+
+header.shop-cart .summa {
+  font-weight: 600;
+  font-size: 20px;
+  float: left;
+  width: 100%;
 }
 
 header .shop-cart .item img{
@@ -107,8 +133,9 @@ header .shop-cart .item b {
   font-weight: 600;
 }
 
-header .presentation{
-  margin: 50px 0;
+header .presentation {
+  margin-top: 50px;
+  margin-bottom: 30px;
   background: url("/src/img/pxfuel.jpg") no-repeat;
   background-position: center center;
   background-blend-mode: multiply;
@@ -168,16 +195,58 @@ main .add-to-cart {
   transition: transform 500ms ease;
 }
 
+.full-item {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+  overflow: scroll;
+}
+
+.full-item > div {
+  width: 500px;
+  position: relative;
+  bottom: 12%;
+  margin: 10% auto;
+  padding: 40px 30px;
+  background: white;
+  border-radius: 9px;
+}
+.full-item > div >img {
+  width: 500px;
+}
+
+.full-item .add-to-cart {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: #ca5252;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  color: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 500ms ease;
+}
+
 main .add-to-cart:hover{
   transform: scale(1.5) translateY(-5px);
 }
+.full-item .add-to-cart:hover{
+  transform: scale(1.5) translateY(-5px);
+}
 
-main h2,main p,main b {
+main h2,main p,main b,.full-item h2,.full-item p,.full-item b {
   margin: 10px 20px;
   color: #333;
 }
 
-main b{
+main b,.full-item b{
   color: #5fa36a;
 }
 
@@ -188,6 +257,10 @@ main .item img{
 }
 
 main .item img:hover{
+  transform: scale(1.05);
+}
+
+.full-item .item img:hover{
   transform: scale(1.05);
 }
 
